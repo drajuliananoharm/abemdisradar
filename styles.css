@@ -1,8 +1,10 @@
 :root {
-    /* Colors */
-    --primary: #4F46E5;
-    --primary-hover: #4338CA;
-    --secondary: #10B981;
+    /* Colors matches ABEMDIS logo */
+    --primary: #5289C3;
+    /* Azul do letreiro 'abemdis' */
+    --primary-hover: #3b6b9e;
+    --secondary: #40C6C1;
+    /* Turquesa do anel externo */
     --background: #F3F4F6;
     --surface: #FFFFFF;
     --text-main: #111827;
@@ -19,6 +21,8 @@
     /* Metrics */
     --radius: 12px;
     --transition: all 0.3s ease;
+
+    /* Fontes compatíveis com o logo (Tech/Futurista) */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
