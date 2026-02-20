@@ -2,6 +2,15 @@ let opportunities = [];
 let discardedOpps = JSON.parse(localStorage.getItem('abemdis_discarded') || '[]');
 let currentFilter = 'all';
 
+// Checa ser o usuário é administrador (via URL: ?admin=true ou localStorage)
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('admin') === 'true') {
+    localStorage.setItem('abemdis_admin', 'true');
+} else if (urlParams.get('admin') === 'false') {
+    localStorage.removeItem('abemdis_admin');
+}
+const isAdmin = localStorage.getItem('abemdis_admin') === 'true';
+
 // DOM Elements
 const container = document.getElementById('opportunities-container');
 const filterBtns = document.querySelectorAll('.main-nav li');
@@ -43,6 +52,7 @@ function renderCards() {
     container.innerHTML = '';
 
     let filtered = opportunities.filter(opp => {
+        // Se alguém for admin e descartar, ou se o JSON tiver uma flag 'discarded' que possamos adicionar depois
         if (discardedOpps.includes(opp.id)) return false;
 
         // Text Search
@@ -84,9 +94,11 @@ function renderCards() {
             <div class="card-header">
                 <span class="tag">${catMap[opp.category] || opp.category}</span>
                 <div style="display:flex; gap: 12px;">
-                    <button class="discard-btn" title="Descartar edital" onclick="discardOpp(event, ${opp.id})">
+                    ${isAdmin ? `
+                    <button class="discard-btn" title="Descartar edital (Apenas Admin)" onclick="discardOpp(event, ${opp.id})">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
+                    ` : ''}
                     <button class="save-btn ${opp.saved ? 'saved' : ''}" title="Salvar edital" onclick="toggleSave(event, ${opp.id})">
                         <i class="${opp.saved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
                     </button>
