@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar de Editais ABEMDIS</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo-container">
-                <i class="fa-solid fa-radar fa-beat"></i>
-                <h2>ABEMDIS <span>Radar</span></h2>
+                <img src="logoabemdis.jpeg" alt="Logotipo ABEMDIS" id="main-logo"
+                    style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                <h2>Radar <span>Editais</span></h2>
             </div>
-            
+
             <nav class="main-nav">
                 <ul>
                     <li class="active" data-filter="all"><i class="fa-solid fa-border-all"></i> Todos os Editais</li>
                     <li data-filter="saude"><i class="fa-solid fa-heart-pulse"></i> Saúde</li>
                     <li data-filter="direitos"><i class="fa-solid fa-scale-balanced"></i> Direitos Humanos</li>
                     <li data-filter="pesquisa"><i class="fa-solid fa-microscope"></i> Pesquisa & Inovação</li>
-                    <li data-filter="saved" class="saved-filter"><i class="fa-solid fa-bookmark"></i> Salvos<span id="saved-count" class="badge">0</span></li>
+                    <li data-filter="saved" class="saved-filter"><i class="fa-solid fa-bookmark"></i> Salvos<span
+                            id="saved-count" class="badge">0</span></li>
                 </ul>
             </nav>
 
@@ -72,7 +78,7 @@
             </section>
         </main>
     </div>
-    
+
     <!-- Modal for details (hidden by default) -->
     <div class="modal-overlay" id="details-modal">
         <div class="modal">
@@ -85,4 +91,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
