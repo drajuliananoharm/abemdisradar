@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Editais ABEMDIS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <i class="fa-solid fa-radar fa-beat"></i>
+                <h2>ABEMDIS <span>Radar</span></h2>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li class="active" data-filter="all"><i class="fa-solid fa-border-all"></i> Todos os Editais</li>
+                    <li data-filter="saude"><i class="fa-solid fa-heart-pulse"></i> Saúde</li>
+                    <li data-filter="direitos"><i class="fa-solid fa-scale-balanced"></i> Direitos Humanos</li>
+                    <li data-filter="pesquisa"><i class="fa-solid fa-microscope"></i> Pesquisa & Inovação</li>
+                    <li data-filter="saved" class="saved-filter"><i class="fa-solid fa-bookmark"></i> Salvos<span id="saved-count" class="badge">0</span></li>
+                </ul>
+            </nav>
+
+            <div class="user-profile">
+                <div class="avatar">ONG</div>
+                <div class="user-info">
+                    <h4>Associação ABEMDIS</h4>
+                    <p>Perfil Saúde/Direitos</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar por fundo, nome ou palavra-chave...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i></button>
+                    <button class="icon-btn theme-toggle"><i class="fa-solid fa-moon"></i></button>
+                </div>
+            </header>
+
+            <div class="dashboard-header">
+                <div>
+                    <h1>Oportunidades de Financiamento</h1>
+                    <p>Encontre os melhores editais para impulsionar seus projetos em 2026.</p>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <span class="stat-value">R$ 15M+</span>
+                        <span class="stat-label">Disponíveis</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value" id="total-opportunities">0</span>
+                        <span class="stat-label">Editais Abertos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunities Grid -->
+            <section class="opportunities-grid" id="opportunities-container">
+                <!-- Cards renderizados via JS -->
+            </section>
+        </main>
+    </div>
+    
+    <!-- Modal for details (hidden by default) -->
+    <div class="modal-overlay" id="details-modal">
+        <div class="modal">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-content" id="modal-content-area">
+                <!-- Content via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

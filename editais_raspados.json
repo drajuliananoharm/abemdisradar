@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "Edital Geral 2026 – Fortalecendo Direitos e Gestando um Mundo Novo",
+        "org": "Fundo Brasil de Direitos Humanos",
+        "category": "direitos",
+        "deadline": "06 Mar 2026",
+        "amount": "Até R$ 50.000",
+        "saved": false,
+        "desc": "Apoio a projetos de defesa de direitos humanos no Brasil. O edital busca fortalecer organizações da sociedade civil que atuam no enfrentamento a violações de direitos.",
+        "link": "https://fundobrasil.org.br"
+    },
+    {
+        "id": 2,
+        "title": "7ª Chamada - Ações Comunitárias frente aos Incêndios Florestais",
+        "org": "Fundo Casa Socioambiental",
+        "category": "pesquisa",
+        "deadline": "04 Fev 2026",
+        "amount": "Até R$ 60.000",
+        "saved": true,
+        "desc": "Apoio a projetos de mitigação e adaptação a extremos climáticos, com foco em incêndios florestais em biomas brasileiros.",
+        "link": "https://casa.org.br"
+    },
+    {
+        "id": 3,
+        "title": "Edital de Saúde e Bem-Estar 2026",
+        "org": "Fundação Itaú Social",
+        "category": "saude",
+        "deadline": "15 Abr 2026",
+        "amount": "Até R$ 100.000",
+        "saved": false,
+        "desc": "Financiamento para projetos voltados à saúde pública, prevenção de doenças e promoção do bem-estar em comunidades vulneráveis. Ideal para associações de pacientes.",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "title": "Apoio à Pesquisa Clínica Independente",
+        "org": "CNPq / Ministério da Saúde",
+        "category": "pesquisa",
+        "deadline": "30 Mar 2026",
+        "amount": "Até R$ 250.000",
+        "saved": false,
+        "desc": "Fomento a pesquisas clínicas e inovação em tratamentos no SUS, incluindo doenças raras e crônicas.",
+        "link": "#"
+    },
+    {
+        "id": 5,
+        "title": "Fundo de Inovação Social - Ciclo 1",
+        "org": "BNDES Fundo Social",
+        "category": "direitos",
+        "deadline": "10 Mai 2026",
+        "amount": "Até R$ 300.000",
+        "saved": false,
+        "desc": "Iniciativas de impacto social profundo, focadas na redução de desigualdades e promoção da acessibilidade.",
+        "link": "#"
+    }
+]
