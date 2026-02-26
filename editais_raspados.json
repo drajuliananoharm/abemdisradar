@@ -1,13 +1,68 @@
 [
     {
-        "id": "fb-0",
-        "title": "Edital Geral 2026 – Fortalecendo Direitos e Gestando um Mundo Novo",
-        "org": "Fundo Brasil",
-        "category": "direitos",
-        "deadline": "Ver site",
-        "amount": "A consultar",
+        "id": "gife-1",
+        "title": "Os editais com inscrições abertas para Março",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "Ver no site",
+        "amount": "Variável",
         "saved": false,
-        "desc": "Edital Fundo Brasil. Status: Aberto",
-        "link": "https://www.fundobrasil.org.br/edital/geral-2026-fortalecendo-direitos-e-gestando-um-mundo-novo/"
+        "desc": "A seleção de editais GIFE traz para março iniciativas voltadas para jovens ativistas pelo clima; projetos sobre sistemas alimentares; fortalecimento i...",
+        "link": "https://gife.org.br/os-editais-com-inscricoes-abertas-para-marco/"
+    },
+    {
+        "id": "gife-2",
+        "title": "Confira a seleção de editais com inscrições abertas neste início de 2026",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "Ver no site",
+        "amount": "Variável",
+        "saved": false,
+        "desc": "Entre as oportunidades, chamadas para fortalecimento institucional, apoio técnico e incentivo à atuação em rede, ampliando a capacidade de resposta e ...",
+        "link": "https://gife.org.br/confira-a-selecao-de-editais-com-inscricoes-abertas-neste-inicio-de-ano/"
+    },
+    {
+        "id": "gife-3",
+        "title": "Chamada pública convida Organizações da Sociedade Civil para o projeto Mulher+Tech",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "24 de novembro",
+        "amount": "Variável",
+        "saved": false,
+        "desc": "OSCs podem enviar suas propostas até 24 de novembro",
+        "link": "https://gife.org.br/chamada-publica-convida-organizacoes-da-sociedade-civil-para-o-projeto-mulhertech/"
+    },
+    {
+        "id": "gife-4",
+        "title": "Fundação Banco do Brasil lança a 13ª edição do Prêmio de Tecnologia Social",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "1º de dezembro",
+        "amount": "Variável",
+        "saved": false,
+        "desc": "Prêmio Fundação Banco do Brasil de Tecnologia Social está com inscrições abertas até 1º de dezembro.",
+        "link": "https://gife.org.br/fundacao-banco-do-brasil-lanca-a-13a-edicao-do-premio-de-tecnologia-social/"
+    },
+    {
+        "id": "gife-5",
+        "title": "Os editais com inscrições abertas para Novembro",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "Ver no site",
+        "amount": "Variável",
+        "saved": false,
+        "desc": "A seleção de editais GIFE traz para novembro iniciativas voltadas para pessoas entregadoras; para juventudes indígenas; e organizações atuantes nos bi...",
+        "link": "https://gife.org.br/os-editais-com-inscricoes-abertas-para-novembro/"
+    },
+    {
+        "id": "gife-6",
+        "title": "Confira editais com inscrições abertas para Outubro",
+        "org": "GIFE",
+        "category": "saude",
+        "deadline": "Ver no site",
+        "amount": "Variável",
+        "saved": false,
+        "desc": "A seleção de editais GIFE traz para outubro iniciativas voltadas para lideranças femininas negras; coletivos que desejam propor soluções para ampliar ...",
+        "link": "https://gife.org.br/confira-editais-com-inscricoes-abertas-para-outubro-2/"
     }
 ]

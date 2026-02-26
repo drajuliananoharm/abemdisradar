@@ -23,6 +23,12 @@ const totalEl = document.getElementById('total-opportunities');
 const modalOverlay = document.getElementById('details-modal');
 const modalContent = document.getElementById('modal-content-area');
 const closeModalBtn = document.querySelector('.close-modal');
+const adminSection = document.getElementById('admin-sidebar-section');
+
+// Show admin section if admin
+if (isAdmin && adminSection) {
+    adminSection.style.display = 'block';
+}
 
 // Init
 async function init() {
@@ -95,11 +101,11 @@ function renderCards() {
                 <span class="tag">${catMap[opp.category] || opp.category}</span>
                 <div style="display:flex; gap: 12px;">
                     ${isAdmin ? `
-                    <button class="discard-btn" title="Descartar edital (Apenas Admin)" onclick="discardOpp(event, ${opp.id})">
+                    <button class="discard-btn" title="Descartar edital (Apenas Admin)" onclick="discardOpp(event, '${opp.id}')">
                         <i class="fa-regular fa-trash-can"></i>
                     </button>
                     ` : ''}
-                    <button class="save-btn ${opp.saved ? 'saved' : ''}" title="Salvar edital" onclick="toggleSave(event, ${opp.id})">
+                    <button class="save-btn ${opp.saved ? 'saved' : ''}" title="Salvar edital" onclick="toggleSave(event, '${opp.id}')">
                         <i class="${opp.saved ? 'fa-solid' : 'fa-regular'} fa-bookmark"></i>
                     </button>
                 </div>
@@ -180,6 +186,48 @@ function setupEventListeners() {
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
     });
+
+    // Admin Config
+    if (isAdmin) {
+        document.getElementById('admin-config-btn')?.addEventListener('click', openAdminModal);
+    }
+}
+
+function openAdminModal() {
+    modalContent.innerHTML = `
+        <div class="modal-header">
+            <h2 class="modal-title">Configurações de Administrador</h2>
+        </div>
+        <div class="modal-body">
+            <p>Para remover editais definitivamente de todos os usuários, copie a lista abaixo e cole no arquivo <code>blacklist.json</code> do repositório no GitHub.</p>
+            
+            <div style="background: var(--background); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <label style="display:block; font-size:0.8rem; margin-bottom:5px; color:var(--text-muted);">Conteúdo para blacklist.json:</label>
+                <textarea id="blacklist-output" readonly style="width:100%; height:100px; font-family:monospace; background:transparent; border:1px solid var(--border); padding:10px; color:var(--text-main);">${JSON.stringify(discardedOpps, null, 2)}</textarea>
+                <button class="action-btn" style="margin-top:10px;" onclick="copyBlacklist()">Copiar Lista</button>
+            </div>
+
+            <p style="font-size:0.8rem;">Dica: Itens descartados localmente (pelo ícone da lixeira) aparecem aqui.</p>
+            
+            <button class="action-btn" style="background:#6B7280; margin-top:10px;" onclick="resetLocalDiscards()">Resetar Descartes Locais</button>
+        </div>
+    `;
+    modalOverlay.classList.add('active');
+}
+
+window.copyBlacklist = function () {
+    const textarea = document.getElementById('blacklist-output');
+    textarea.select();
+    document.execCommand('copy');
+    alert('Lista copiada! Agora cole no arquivo blacklist.json no GitHub.');
+};
+
+window.resetLocalDiscards = function () {
+    if (confirm("Deseja limpar todos os seus descartes locais? Isso não afetará o que já foi enviado para a blacklist do servidor.")) {
+        discardedOpps = [];
+        localStorage.removeItem('abemdis_discarded');
+        location.reload();
+    }
 }
 
 function openModal(opp) {

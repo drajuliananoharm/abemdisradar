@@ -132,6 +132,17 @@ def save_to_json(data, filename="editais_raspados.json"):
 if __name__ == "__main__":
     print("--- Rastreador de Editais ABEMDIS (Módulo Real) ---")
     
+    # Carrega lista de IDs para ignorar (blacklist.json)
+    blacklist = []
+    try:
+        with open("blacklist.json", "r", encoding="utf-8") as f:
+            blacklist = json.load(f)
+            print(f"Blacklist carregada: {len(blacklist)} itens ignorados.")
+    except FileNotFoundError:
+        print("Nenhuma blacklist encontrada. Continuando normalmente.")
+    except Exception as e:
+        print(f"Erro ao carregar blacklist: {e}")
+
     todas_oportunidades = []
     
     # Executa cada scraper
@@ -141,6 +152,14 @@ if __name__ == "__main__":
     dados_gife = scrape_gife()
     todas_oportunidades.extend(dados_gife)
     
+    # Filtra itens na blacklist
+    if blacklist:
+        original_count = len(todas_oportunidades)
+        todas_oportunidades = [o for o in todas_oportunidades if o['id'] not in blacklist]
+        diff = original_count - len(todas_oportunidades)
+        if diff > 0:
+            print(f"Filtrados {diff} editais da blacklist.")
+
     print(f"\nTotal Geral: {len(todas_oportunidades)} editais encontrados.")
     
     if todas_oportunidades:
